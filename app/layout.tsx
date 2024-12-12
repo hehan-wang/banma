@@ -6,7 +6,7 @@ import "../styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "庖丁智能",
+  title: "云鹤未来",
   description: "全流程文档智能利器，推动文档工作提质增效",
 };
 
