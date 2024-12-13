@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '关于我们 - 云鹤未来',
+  title: '关于我们',
   description: '了解云鹤未来 - 专业的AI文档智能解决方案提供商',
 }
 
