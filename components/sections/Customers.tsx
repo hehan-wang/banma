@@ -1,35 +1,21 @@
-import fs from 'fs'
-import path from 'path'
-import Image from 'next/image'
+'use client'
 
-// Move this inside the component
-function getCustomerImages() {
-  try {
-    const directory = path.join(process.cwd(), 'public/images/customers')
-    const filenames = fs.readdirSync(directory)
-    
-    return filenames.map(filename => {
-      const name = filename.replace(/\.[^/.]+$/, '')
-        .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ')
-      
-      return {
-        name,
-        logo: `/images/customers/${filename}`,
-        alt: `${name} logo`
-      }
-    })
-  } catch (error) {
-    console.warn('Error reading customer images:', error)
-    return []
-  }
+import Image from 'next/image'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
+import 'swiper/css'
+
+type Customer = {
+  name: string
+  logo: string
+  alt: string
 }
 
-export default function Customers() {
-  // Get customers directly in component
-  const customers = getCustomerImages()
+interface CustomersProps {
+  customers: Customer[]
+}
 
+export default function Customers({ customers }: CustomersProps) {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,23 +27,40 @@ export default function Customers() {
         </div>
 
         <div className="mt-12">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={30}
+            slidesPerView={2}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            speed={800}
+            breakpoints={{
+              640: {
+                slidesPerView: 3,
+              },
+              1024: {
+                slidesPerView: 5,
+              },
+            }}
+          >
             {customers?.map((customer, index) => (
-              <div 
-                key={index}
-                className="flex justify-center items-center col-span-1 p-8"
-              >
-                <div className="relative h-12 w-full">
-                  <Image
-                    src={customer.logo}
-                    alt={customer.alt}
-                    fill
-                    className="object-contain filter grayscale hover:grayscale-0 transition-all"
-                  />
+              <SwiperSlide key={index}>
+                <div className="flex justify-center items-center p-4">
+                  <div className="relative h-10 w-full">
+                    <Image
+                      src={customer.logo}
+                      alt={customer.alt}
+                      fill
+                      className="object-contain filter grayscale hover:grayscale-0 transition-all"
+                    />
+                  </div>
                 </div>
-              </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </div>
     </section>
