@@ -26,20 +26,26 @@ const menuItems = {
   ],
   products: [
     {
-      icon: "/icons/product1.svg",
-      name: "庖丁解文",
-      description: "专业知识 AI 问答助手",
-      href: "/products/1",
-      tag: "扫描即用"
+      icon: "/icons/wenwen.svg", 
+      name: "问问AI",
+      description: "稳定访问AI模型",
+      href: "https://chat.wenwen-ai.com/",
+      tag: "立即体验"
     },
     {
-      icon: "/icons/product2.svg",
-      name: "PDFlux",
-      description: "PDF 数据提取神器",
-      href: "/products/2",
-      tag: "扫描即用"
+      icon: "/icons/wenwen.svg",
+      name: "问问Agent",
+      description: "快速构建AI应用",
+      href: "https://app.wenwen-ai.com/",
+      tag: "新品上线"
     },
-    // Add more products as needed
+    {
+      icon: "/icons/wenwen.svg",
+      name: "问问API",
+      description: "多模型API集成",
+      href: "https://key.wenwen-ai.com/",
+      tag: "开放接入"
+    }
   ],
   solutions: [
     {
@@ -87,11 +93,11 @@ export default function Navbar() {
                 height={40}
               />
             </div>
-            <div className="flex-1">
-              <div className="flex items-center">
-                <h3 className="font-medium text-gray-900">{item.name}</h3>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center space-x-2">
+                <h3 className="font-medium text-gray-900 truncate">{item.name}</h3>
                 {item.tag && (
-                  <span className="ml-2 px-2 py-1 text-xs bg-orange-100 text-orange-600 rounded">
+                  <span className="flex-shrink-0 px-2 py-1 text-xs bg-orange-100 text-orange-600 rounded">
                     {item.tag}
                   </span>
                 )}
