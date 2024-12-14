@@ -12,3 +12,12 @@
     @apply py-16 md:py-24;
   }
 }
+
+@keyframes glow {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.3; }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
