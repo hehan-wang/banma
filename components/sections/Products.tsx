@@ -1,5 +1,9 @@
 // components/sections/Products.tsx
+'use client'
 import Image from 'next/image'
+import { useState } from 'react';
+import { Dialog } from '@headlessui/react';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 const products = [
   {
@@ -20,6 +24,8 @@ const products = [
 ]
 
 export default function Products() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,7 +38,7 @@ export default function Products() {
               key={index}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
-              <div className="relative h-48 w-full">
+              <div className="relative h-48 w-full group">
                 <Image
                   src={product.image}
                   alt={product.title}
@@ -40,6 +46,13 @@ export default function Products() {
                   className="object-cover"
                   priority={index === 0}
                 />
+                <button
+                  onClick={() => setSelectedImage(product.image)}
+                  className="absolute top-2 right-2 p-2 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  aria-label="放大图片"
+                >
+                  <MagnifyingGlassIcon className="w-5 h-5 text-white" />
+                </button>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold">{product.title}</h3>
@@ -49,6 +62,37 @@ export default function Products() {
           ))}
         </div>
       </div>
+
+      <Dialog 
+        open={!!selectedImage} 
+        onClose={() => setSelectedImage(null)}
+        className="relative z-50"
+      >
+        <div className="fixed inset-0 bg-black/70" aria-hidden="true" />
+        
+        <div className="fixed inset-0 flex items-start justify-center overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
+          <Dialog.Panel className="relative my-8 w-full max-w-3xl bg-white rounded-lg">
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="fixed top-5 right-5 z-50 p-2 bg-black/50 hover:bg-black/70 rounded-full text-white hover:text-gray-300 transition-colors"
+            >
+              关闭
+            </button>
+            {selectedImage && (
+              <div className="w-full">
+                <Image
+                  src={selectedImage}
+                  alt="放大图片"
+                  width={1920}
+                  height={1080}
+                  className="w-full h-auto"
+                  priority
+                />
+              </div>
+            )}
+          </Dialog.Panel>
+        </div>
+      </Dialog>
     </section>
   )
 }

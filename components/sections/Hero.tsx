@@ -30,7 +30,7 @@ export default function Hero() {
 
       {/* Particles effect */}
       <Particles
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none z-[1]"
         init={particlesInit}
         options={{
           particles: {
@@ -77,21 +77,15 @@ export default function Hero() {
             }
           },
           interactivity: {
-            detectsOn: "canvas",
+            detectsOn: "window",
             events: {
               onHover: {
-                enable: true,
-                mode: "grab"
+                enable: false
+              },
+              onClick: {
+                enable: false
               },
               resize: true
-            },
-            modes: {
-              grab: {
-                distance: 140,
-                links: {
-                  opacity: 0.5
-                }
-              }
             }
           },
           background: {
@@ -101,12 +95,12 @@ export default function Hero() {
       />
 
       {/* 装饰元素 - 渐变光晕 */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-[2]">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-300 rounded-full opacity-30 blur-3xl animate-pulse" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-300 rounded-full opacity-30 blur-3xl animate-pulse" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-[3] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
