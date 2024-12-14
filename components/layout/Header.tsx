@@ -45,6 +45,14 @@ const menuItems = {
       description: "多模型API集成",
       href: "https://key.wenwen-ai.com/",
       tag: "开放接入"
+    },
+    //微信机器人
+    {
+      icon: "/icons/wenwen.svg",
+      name: "问问Bot",
+      description: "微信智能问答机器人",
+      href: "https://ei3yj6pays9.feishu.cn/wiki/FJC1wT4QUiPc8Tkth5icrNy8nNe",
+      tag: "新品上线"
     }
   ],
   solutions: [
