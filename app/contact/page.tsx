@@ -1,12 +1,13 @@
 // src/app/contact/page.tsx
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
+import Image from 'next/image';
 
 interface FormData {
   name: string;
-  email: string;
+  wechat: string;
   phone?: string;
   subject: string;
   message: string;
@@ -21,19 +22,31 @@ export default function Contact() {
   } = useForm<FormData>();
   
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+  const [feedbackMessage, setFeedbackMessage] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
+    setFeedbackMessage('');
+
     try {
-      // 这里添加您的表单提交逻辑
-      console.log('Form data:', data);
-      await new Promise(resolve => setTimeout(resolve, 1000)); // 模拟API调用
-      setSubmitStatus('success');
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('提交失败');
+      }
+
+      setFeedbackMessage('留言提交成功！');
       reset();
     } catch (error) {
-      console.error('Submit error:', error);
-      setSubmitStatus('error');
+      console.error('提交错误:', error);
+      setFeedbackMessage('提交失败，请稍后重试');
     } finally {
       setIsSubmitting(false);
     }
@@ -44,34 +57,62 @@ export default function Contact() {
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-8">联系我们</h1>
         
-        {/* 联系信息 */}
+        {/* 更新联系信息 */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4">联系方式</h2>
             <div className="space-y-3">
               <p>
                 <span className="font-medium">地址：</span>
-                上海市浦东新区xxx路xxx号
+                北京市高碑店四惠东水南庄15号楼1单元
               </p>
               <p>
                 <span className="font-medium">电话：</span>
-                021-xxxxxxxx
+                17600108055
               </p>
               <p>
                 <span className="font-medium">邮箱：</span>
-                contact@example.com
-              </p>
-              <p>
-                <span className="font-medium">工作时间：</span>
-                周一至周五 9:00-18:00
+                hehan2048@gmail.com
               </p>
             </div>
           </div>
 
-          {/* 地图组件 */}
-          <div className="bg-gray-100 rounded-lg">
-            <div className="h-full min-h-[200px] flex items-center justify-center">
-              地图组件
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold mb-4">扫码关注</h2>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="text-center">
+                <div className="relative w-32 h-32 mx-auto rounded-lg mb-2 overflow-hidden">
+                  <Image
+                    src="/images/qr.jpg"
+                    alt="微信二维码"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <p className="text-sm">微信：hehan4096</p>
+              </div>
+              {/* <div className="text-center">
+                <div className="relative w-32 h-32 mx-auto rounded-lg mb-2 overflow-hidden">
+                  <Image
+                    src="/images/wenwen.jpg"
+                    alt="程序员鹤涵公众号二维码"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <p className="text-sm">公众号：问问AI助手</p>
+              </div> */}
+              <div className="text-center">
+                <div className="relative w-32 h-32 mx-auto rounded-lg mb-2 overflow-hidden">
+                  <Image
+                    src="/images/mp.jpg"
+                    alt="程序员鹤涵公众号二维码"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <p className="text-sm">公众号：程序员鹤涵</p>
+              </div>
             </div>
           </div>
         </div>
@@ -79,7 +120,7 @@ export default function Contact() {
         {/* 联系表单 */}
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold mb-6">在线留言</h2>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                 姓名 <span className="text-red-500">*</span>
@@ -96,23 +137,17 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                邮箱 <span className="text-red-500">*</span>
+              <label htmlFor="wechat" className="block text-sm font-medium text-gray-700">
+                微信
               </label>
               <input
-                id="email"
-                type="email"
-                {...register('email', {
-                  required: '请输入邮箱',
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: '请输入有效的邮箱地址'
-                  }
-                })}
+                id="wechat"
+                type="text"
+                {...register('wechat')}
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+              {errors.wechat && (
+                <p className="text-red-500 text-sm mt-1">{errors.wechat.message}</p>
               )}
             </div>
 
@@ -166,11 +201,8 @@ export default function Contact() {
               {isSubmitting ? '提交中...' : '提交'}
             </button>
 
-            {submitStatus === 'success' && (
-              <p className="text-green-500 text-center">提交成功！我们会尽快与您联系。</p>
-            )}
-            {submitStatus === 'error' && (
-              <p className="text-red-500 text-center">提交失败，请稍后重试。</p>
+            {feedbackMessage && (
+              <p className="text-green-500 text-center">{feedbackMessage}</p>
             )}
           </form>
         </div>
