@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import "../styles/globals.css";
 import Footer from '@/components/layout/Footer'
 import 'swiper/css'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh">
+      <head>
+        <Script
+          strategy="afterInteractive"
+          id="baidu-analytics"
+        >
+          {`
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?${process.env.NEXT_PUBLIC_BAIDU_ANALYTICS_ID}";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+          `}
+        </Script>
+      </head>
       <body className={inter.className}>
         <Header />
         {children}
