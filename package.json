@@ -1,37 +1,34 @@
 {
-  "name": "paoding-clone",
+  "name": "cloud-wenwen-ai",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.0",
-    "@heroicons/react": "^2.2.0",
-    "axios": "^1.7.9",
-    "framer-motion": "^11.13.5",
-    "fs": "^0.0.1-security",
-    "next": "15.1.0",
+    "clsx": "^2.0.0",
+    "framer-motion": "^10.16.4",
+    "next": "15.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.54.1",
-    "react-tsparticles": "^2.12.2",
-    "swiper": "^11.1.15",
-    "tsparticles": "^3.7.1",
+    "react-particles": "^2.12.2",
+    "tailwind-merge": "^2.0.0",
+    "tsparticles": "^2.12.0",
+    "tsparticles-engine": "^2.12.0",
     "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.0",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.0",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }
 }
