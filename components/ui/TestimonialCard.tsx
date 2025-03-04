@@ -1,11 +1,10 @@
-import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 type TestimonialCardProps = {
   quote: string;
   author: string;
   title: string;
-  avatar: string;
+  avatar?: string;
   className?: string;
 };
 
@@ -13,7 +12,6 @@ export const TestimonialCard = ({
   quote,
   author,
   title,
-  avatar,
   className,
 }: TestimonialCardProps) => {
   return (
@@ -35,13 +33,21 @@ export const TestimonialCard = ({
       </div>
       <div className="flex items-center">
         <div className="flex-shrink-0 mr-3">
-          <Image
-            className="h-10 w-10 rounded-full object-cover"
-            src={avatar}
-            alt={author}
-            width={40}
-            height={40}
-          />
+          <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+            <svg 
+              className="h-6 w-6 text-blue-600" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor" 
+              strokeWidth={2}
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" 
+              />
+            </svg>
+          </div>
         </div>
         <div>
           <p className="text-sm font-semibold text-gray-900">{author}</p>

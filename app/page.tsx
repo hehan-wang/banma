@@ -25,7 +25,7 @@ export default function Home() {
               </h1>
               <p className="text-gray-300 text-lg md:text-xl mb-8">
                 为AI开发者和企业提供稳定、高性能、低成本的算力解决方案，
-                加速您的AI模型训练与推理
+                加速您的AI模型推理
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button variant="primary" size="lg" href="https://cloud.wenwen-ai.com/account">
@@ -73,7 +73,7 @@ export default function Home() {
                 专为AI打造的高性能云平台
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                从模型训练到推理部署，我们提供全生命周期的AI算力支持
+                我们提供全方位的AI推理算力支持
               </p>
             </div>
           </FadeIn>
@@ -81,7 +81,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <CloudFeatureCard
               title="高性能GPU集群"
-              description="提供最新的NVIDIA A100/H100、AMD MI300系列GPU，满足大模型训练和推理需求"
+              description="提供最新的NVIDIA A100/H100、AMD MI300系列GPU，满足大模型推理需求"
               icon="/icons/gpu.svg"
             />
             <CloudFeatureCard
@@ -122,7 +122,7 @@ export default function Home() {
                 行业解决方案
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                针对不同场景定制的AI算力解决方案，助力各行业数字化转型
+                针对不同场景定制的AI推理算力解决方案，助力各行业数字化转型
               </p>
             </div>
           </FadeIn>
@@ -131,13 +131,13 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="p-6">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <Image src="/icons/model-training.svg" alt="模型训练" width={24} height={24} />
+                  <Image src="/icons/model-training.svg" alt="高性能推理" width={24} height={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">大规模模型训练</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">高性能推理服务</h3>
                 <p className="text-gray-600 mb-4">
-                  提供高性能分布式训练环境，加速企业自研大模型训练过程
+                  提供高性能推理环境，加速企业AI应用落地
                 </p>
-                <Link href="/solutions/training" className="text-blue-600 hover:text-blue-800 font-medium">
+                <Link href="/solutions/inference" className="text-blue-600 hover:text-blue-800 font-medium">
                   了解更多 →
                 </Link>
               </div>
@@ -190,50 +190,50 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <PricingCard
-              title="按需计费"
-              price="¥0.5"
-              unit="/GPU小时起"
-              description="按实际使用时长计费，灵活应对短期需求"
+              title="按Token计费"
+              price="¥0.002"
+              unit="/1K tokens起"
+              description="按实际使用的token量计费，适合API调用场景"
               features={[
                 "无最低消费",
-                "按秒计费",
-                "即开即用",
-                "多种GPU型号可选",
+                "精准计量",
+                "支持主流大模型",
+                "API简单集成",
                 "基础技术支持"
               ]}
               cta="立即开始"
-              ctaLink="/register"
-              popular={false}
-            />
-            <PricingCard
-              title="资源包"
-              price="¥3,000"
-              unit="/起"
-              description="预付费资源包，更高性价比"
-              features={[
-                "较按需计费低20%",
-                "有效期6个月",
-                "优先资源调度",
-                "所有GPU型号适用",
-                "标准技术支持"
-              ]}
-              cta="立即购买"
-              ctaLink="/pricing/package"
+              ctaLink="https://cloud.wenwen-ai.com/model"
               popular={true}
             />
             <PricingCard
-              title="企业定制"
-              price="定制"
-              unit=""
-              description="为大型企业和特殊需求定制的解决方案"
+              title="独占GPU实例"
+              price="¥3000"
+              unit="/月起"
+              description="独占GPU资源，确保稳定性能和隐私安全"
               features={[
-                "专属资源池",
-                "SLA保障",
-                "定制化部署",
-                "专属技术支持",
-                "企业级安全保障"
+                "完全独占资源",
+                "按月计费",
+                "多种GPU型号可选",
+                "自定义部署环境",
+                "标准技术支持"
               ]}
-              cta="联系销售"
+              cta="立即购买"
+              ctaLink="/pricing/dedicated"
+              popular={false}
+            />
+            <PricingCard
+              title="企业定制"
+              price="待定"
+              unit=""
+              description="为企业提供定制化的AI算力一体机解决方案"
+              features={[
+                "专属硬件配置",
+                "本地化部署",
+                "数据安全保障",
+                "专属技术支持",
+                "企业级SLA保障"
+              ]}
+              cta="联系客服"
               ctaLink="/contact"
               popular={false}
             />
@@ -257,22 +257,19 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <TestimonialCard
-              quote="斑码云平台的GPU性能非常稳定，对我们训练大型语言模型起到了关键作用，成本也比其他云服务提供商低了30%。"
+              quote="斑码云平台的GPU性能非常稳定，对我们的大型语言模型推理起到了关键作用，成本也比其他云服务提供商低了30%。"
               author="张博士"
               title="某AI研究院首席科学家"
-              avatar="/avatars/testimonial-1.jpg"
             />
             <TestimonialCard
               quote="操作界面简洁直观，即使是非技术人员也能快速上手。客户支持团队反应迅速，帮我们解决了很多技术问题。"
               author="李总监"
               title="科技创业公司CTO"
-              avatar="/avatars/testimonial-2.jpg"
             />
             <TestimonialCard
-              quote="我们在斑码云使用独占实例的DeepSeek大模型上，服务响应速度提升了2倍，这对用户体验至关重要。"
+              quote="我们在斑码云使用独占实例的DeepSeek大模型推理服务，响应速度提升了2倍，这对用户体验至关重要。"
               author="王经理"
               title="某设计平台产品负责人"
-              avatar="/avatars/testimonial-3.jpg"
             />
           </div>
         </div>
@@ -286,10 +283,10 @@ export default function Home() {
               开始使用斑码云，加速您的AI创新
             </h2>
             <p className="text-gray-100 text-lg mb-8">
-              立即注册，获得¥500算力代金券，体验高性能AI云平台
+              立即注册，获得¥10算力代金券，体验高性能AI云平台
             </p>
             <div className="flex justify-center">
-              <Button variant="white" size="lg" href="/register">
+              <Button variant="white" size="lg" href="https://cloud.wenwen-ai.com/account">
                 立即开始
               </Button>
             </div>
