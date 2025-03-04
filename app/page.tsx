@@ -131,43 +131,67 @@ export default function Home() {
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="p-6">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <Image src="/icons/model-training.svg" alt="高性能推理" width={24} height={24} />
+                  <Image src="/icons/inference.svg" alt="金融服务" width={24} height={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">高性能推理服务</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">金融服务</h3>
                 <p className="text-gray-600 mb-4">
-                  提供高性能推理环境，加速企业AI应用落地
+                  为金融机构提供智能风控系统、个性化投资顾问和自动化客户服务，提升决策效率和用户体验
                 </p>
-                <Link href="/solutions/inference" className="text-blue-600 hover:text-blue-800 font-medium">
-                  了解更多 →
-                </Link>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl shadow-md overflow-hidden">
-              <div className="p-6">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-                  <Image src="/icons/inference.svg" alt="模型推理" width={24} height={24} />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">高效推理服务</h3>
-                <p className="text-gray-600 mb-4">
-                  针对LLM、Diffusion等模型优化的推理服务，低延迟、高吞吐量
-                </p>
-                <Link href="/solutions/inference" className="text-blue-600 hover:text-blue-800 font-medium">
-                  了解更多 →
-                </Link>
               </div>
             </div>
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="p-6">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                  <Image src="/icons/saas.svg" alt="SaaS部署" width={24} height={24} />
+                  <Image src="/icons/model-training.svg" alt="教育科技" width={24} height={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">AI应用SaaS部署</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">教育科技</h3>
                 <p className="text-gray-600 mb-4">
-                  一站式AI应用部署平台，快速将您的AI模型转化为可用的SaaS服务
+                  打造智能学习平台和个性化教育内容，通过AI技术提供自适应学习路径和实时反馈系统
                 </p>
-                <Link href="/solutions/saas" className="text-blue-600 hover:text-blue-800 font-medium">
-                  了解更多 →
-                </Link>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="p-6">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                  <Image src="/icons/saas.svg" alt="零售电商" width={24} height={24} />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">零售电商</h3>
+                <p className="text-gray-600 mb-4">
+                  提供智能推荐系统、视觉搜索和需求预测分析，优化库存管理并提升用户购物体验
+                </p>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="p-6">
+                <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                  <Image src="/icons/optimize.svg" alt="医疗健康" width={24} height={24} />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">医疗健康</h3>
+                <p className="text-gray-600 mb-4">
+                  支持医学影像诊断、智能病历分析和药物研发，提高诊疗精准度并加速新药发现过程
+                </p>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="p-6">
+                <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                  <Image src="/icons/gpu.svg" alt="智能制造" width={24} height={24} />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">智能制造</h3>
+                <p className="text-gray-600 mb-4">
+                  实现生产线智能监控、设备预测性维护和质量控制自动化，提高生产效率和产品良率
+                </p>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="p-6">
+                <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                  <Image src="/icons/interface.svg" alt="内容创作" width={24} height={24} />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">内容创作</h3>
+                <p className="text-gray-600 mb-4">
+                  为媒体和创意行业提供AI辅助创作、智能内容生成和个性化推荐，提升内容质量和用户参与度
+                </p>
               </div>
             </div>
           </div>
@@ -283,7 +307,7 @@ export default function Home() {
               开始使用斑码云，加速您的AI创新
             </h2>
             <p className="text-gray-100 text-lg mb-8">
-              立即注册，获得¥10算力代金券，体验高性能AI云平台
+              立即注册，获得¥15算力代金券，体验高性能AI云平台
             </p>
             <div className="flex justify-center">
               <Button variant="white" size="lg" href="https://cloud.wenwen-ai.com/account">

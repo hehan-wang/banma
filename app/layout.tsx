@@ -34,38 +34,38 @@ export default function RootLayout({
               <div>
                 <h3 className="text-lg font-semibold mb-4">产品</h3>
                 <ul className="space-y-2">
-                  <li><a href="/products" className="text-gray-400 hover:text-gray-300">GPU实例</a></li>
-                  <li><a href="/products/inference" className="text-gray-400 hover:text-gray-300">模型推理</a></li>
-                  <li><a href="/products/training" className="text-gray-400 hover:text-gray-300">模型训练</a></li>
+                  <li><a href="" className="text-gray-400 hover:text-gray-300">GPU实例</a></li>
+                  <li><a href="" className="text-gray-400 hover:text-gray-300">模型推理</a></li>
+                  <li><a href="" className="text-gray-400 hover:text-gray-300">模型训练</a></li>
                 </ul>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-4">解决方案</h3>
                 <ul className="space-y-2">
-                  <li><a href="/solutions/training" className="text-gray-400 hover:text-gray-300">大规模模型训练</a></li>
-                  <li><a href="/solutions/inference" className="text-gray-400 hover:text-gray-300">高效推理服务</a></li>
-                  <li><a href="/solutions/saas" className="text-gray-400 hover:text-gray-300">AI应用SaaS部署</a></li>
+                  <li><a href="" className="text-gray-400 hover:text-gray-300">大规模模型训练</a></li>
+                  <li><a href="" className="text-gray-400 hover:text-gray-300">高效推理服务</a></li>
+                  <li><a href="" className="text-gray-400 hover:text-gray-300">AI算力一体机</a></li>
                 </ul>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-4">资源</h3>
                 <ul className="space-y-2">
-                  <li><a href="/docs" className="text-gray-400 hover:text-gray-300">技术文档</a></li>
-                  <li><a href="/blog" className="text-gray-400 hover:text-gray-300">博客</a></li>
-                  <li><a href="/support" className="text-gray-400 hover:text-gray-300">帮助中心</a></li>
+                  <li><a href="" className="text-gray-400 hover:text-gray-300">技术文档</a></li>
+                  <li><a href="" className="text-gray-400 hover:text-gray-300">API参考</a></li>
+                  <li><a href="https://hehanwang.com" className="text-gray-400 hover:text-gray-300">博客</a></li>
                 </ul>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-4">公司</h3>
                 <ul className="space-y-2">
-                  <li><a href="/about" className="text-gray-400 hover:text-gray-300">关于我们</a></li>
-                  <li><a href="/contact" className="text-gray-400 hover:text-gray-300">联系我们</a></li>
-                  <li><a href="/careers" className="text-gray-400 hover:text-gray-300">加入我们</a></li>
+                  <li><a href="https://wenwen-ai.com/about" className="text-gray-400 hover:text-gray-300">关于我们</a></li>
+                  <li><a href="https://wenwen-ai.com/about" className="text-gray-400 hover:text-gray-300">联系我们</a></li>
+                  <li><a href="https://wenwen-ai.com/about" className="text-gray-400 hover:text-gray-300">加入我们</a></li>
                 </ul>
               </div>
             </div>
-            <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500">
-              <p>© {new Date().getFullYear()} 斑码云. 保留所有权利.</p>
+            <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+              <p>© {new Date().getFullYear()} 斑马AI算力. 保留所有权利.</p>
             </div>
           </div>
         </footer>
