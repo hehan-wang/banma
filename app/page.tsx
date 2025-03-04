@@ -20,17 +20,19 @@ export default function Home() {
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-violet-400 to-purple-500 mb-6">
                 高效易用的AI算力云平台
+                <br />
+                支持DeepSeek满血版！
               </h1>
               <p className="text-gray-300 text-lg md:text-xl mb-8">
                 为AI开发者和企业提供稳定、高性能、低成本的算力解决方案，
                 加速您的AI模型训练与推理
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button variant="primary" size="lg" href="/register">
-                  免费试用
+                <Button variant="primary" size="lg" href="https://cloud.wenwen-ai.com/account">
+                  注册免费试用
                 </Button>
-                <Button variant="outline" size="lg" href="/pricing">
-                  查看定价
+                <Button variant="outline" size="lg" href="https://cloud.wenwen-ai.com/pricing">
+                  查看模型定价
                 </Button>
               </div>
             </div>
@@ -94,7 +96,7 @@ export default function Home() {
             />
             <CloudFeatureCard
               title="简易操作界面"
-              description="直观的控制台界面，无需复杂配置，一键部署AI应用"
+              description="直观的控制台界面，无需复杂配置，一键接入AI应用"
               icon="/icons/interface.svg"
             />
             <CloudFeatureCard
@@ -267,7 +269,7 @@ export default function Home() {
               avatar="/avatars/testimonial-2.jpg"
             />
             <TestimonialCard
-              quote="我们将图像生成模型部署在斑码云上，服务响应速度提升了2倍，这对用户体验至关重要。"
+              quote="我们在斑码云使用独占实例的DeepSeek大模型上，服务响应速度提升了2倍，这对用户体验至关重要。"
               author="王经理"
               title="某设计平台产品负责人"
               avatar="/avatars/testimonial-3.jpg"

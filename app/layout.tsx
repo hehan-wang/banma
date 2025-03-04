@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
+// import Header from "@/components/layout/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "斑码云 - 高效易用的AI算力云平台",
   description: "为AI开发者和企业提供稳定、高性能、低成本的算力解决方案，加速您的AI模型训练与推理",
+  icons: {
+    icon: '/favicon.ico',
+    // You can also specify different sizes and types
+    // apple: '/apple-icon.png',
+    // shortcut: '/shortcut-icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body className={inter.className}>
-        <Header />
+        {/* <Header /> */}
         <main className="min-h-screen pt-16">
           {children}
         </main>

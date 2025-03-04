@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 
@@ -39,8 +40,18 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              斑码云
+            <div className="relative h-8 w-32">
+              <Image
+                src="/images/logo.svg"
+                alt="MCloud Logo"
+                width={100}
+                height={32}
+                className="h-8 w-auto"
+                priority
+              />
+            </div>
+            <span className="ml-2 text-xl font-bold text-primary-700">
+              云平台
             </span>
           </Link>
 
@@ -52,7 +63,7 @@ export default function Header() {
                 href={link.href}
                 className={cn(
                   'font-medium transition-colors duration-200',
-                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                  isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-primary-200'
                 )}
               >
                 {link.name}
@@ -119,7 +130,7 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-700 hover:text-blue-600 font-medium"
+                  className="text-gray-700 hover:text-primary-600 font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
