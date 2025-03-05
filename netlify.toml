@@ -1,0 +1,26 @@
+[build]
+  command = "pnpm run build"
+  publish = ".next"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  NODE_VERSION = "18"
+  
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# 添加重定向规则，确保所有路由都能正确工作
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  conditions = {Role = ["anonymous"]}
+
+# 添加标头，确保正确的缓存控制
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Cache-Control = "public, max-age=0, must-revalidate" 
