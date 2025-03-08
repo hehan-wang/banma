@@ -163,7 +163,7 @@ export default function AboutPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { title: '公司地址', content: '北京市高碑店四惠东水南庄15号楼1单元' },
+              { title: '公司地址', content: '北京市中关村烟台协同创新中心17号楼' },
               { title: '联系电话', content: '17600108055' },
               { title: '电子邮箱', content: 'hehan2048@gmail.com' },
             ].map((item) => (
