@@ -7,12 +7,9 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 
 const navLinks = [
-  { name: '首页', href: '/' },
-  { name: '产品', href: '/products' },
-  { name: '解决方案', href: '/solutions' },
-  { name: '定价', href: '/pricing' },
-  { name: '文档', href: '/docs' },
-  { name: '关于我们', href: '/about' },
+  { name: '模型', href: 'https://cloud.wenwen-ai.com/model' },
+  { name: '定价', href: 'https://cloud.wenwen-ai.com/pricing' },
+  { name: '关于我们', href: 'https://www.baidu.com' },
 ]
 
 export default function Header() {
@@ -40,9 +37,9 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-8 w-32">
+            <div className="relative h-8 w-12">
               <Image
-                src="/images/logo.svg"
+                src="/images/logo1.png"
                 alt="MCloud Logo"
                 width={100}
                 height={32}
@@ -50,8 +47,13 @@ export default function Header() {
                 priority
               />
             </div>
-            <span className="ml-2 text-xl font-bold text-primary-700">
-              云平台
+            <span className={cn(
+              "ml-1 text-xl font-semibold tracking-tight",
+              isScrolled 
+                ? "text-primary-700 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent" 
+                : "text-white drop-shadow-sm"
+            )}>
+              斑码云
             </span>
           </Link>
 
@@ -75,14 +77,14 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-4">
             <Button
               variant={isScrolled ? 'secondary' : 'outline'}
-              href="/login"
+              href="https://cloud.wenwen-ai.com/login"
               size="sm"
             >
               登录
             </Button>
             <Button
               variant="primary"
-              href="/register"
+              href="https://cloud.wenwen-ai.com/register"
               size="sm"
             >
               免费注册
@@ -91,7 +93,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg
