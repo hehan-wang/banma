@@ -36,7 +36,7 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="https://cloud.wenwen-ai.com" className="flex items-center">
             <div className="relative h-8 w-12">
               <Image
                 src="/images/logo1.png"
