@@ -64,7 +64,7 @@ export default function Contact() {
             <div className="space-y-3">
               <p>
                 <span className="font-medium">地址：</span>
-                北京市高碑店四惠东水南庄15号楼1单元
+                北京市中关村烟台协同创新中心17号楼
               </p>
               <p>
                 <span className="font-medium">电话：</span>

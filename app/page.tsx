@@ -18,20 +18,29 @@ export default function Home() {
         <div className="container relative z-10 mx-auto px-4 md:px-6">
           <FadeIn>
             <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-violet-400 to-purple-500 mb-6">
-                高效易用的AI算力云平台
-                <br />
-                支持DeepSeek满血版！
+              <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-violet-400 to-purple-500 mb-6 flex flex-col">
+                <span className="mb-5">高效易用的AI算力云平台</span>
+                <span>支持DeepSeek满血版！</span>
               </h1>
               <p className="text-gray-300 text-lg md:text-xl mb-8">
                 为AI开发者和企业提供稳定、高性能、低成本的算力解决方案，
                 加速您的AI模型推理
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button variant="primary" size="lg" href="https://cloud.wenwen-ai.com/account">
-                  注册免费试用
+                <Button 
+                  variant="primary" 
+                  size="md" 
+                  className="sm:text-base text-sm px-3 sm:px-7 py-2.5 sm:py-3 font-semibold shadow-lg hover:shadow-blue-500/20 w-[180px] sm:w-auto mx-auto sm:mx-0"
+                  href="https://cloud.wenwen-ai.com/account"
+                >
+                  免费试用注册
                 </Button>
-                <Button variant="outline" size="lg" href="https://cloud.wenwen-ai.com/pricing">
+                <Button 
+                  variant="outline" 
+                  size="md" 
+                  className="sm:text-base text-sm px-3 sm:px-7 py-2.5 sm:py-3 w-[180px] sm:w-auto mx-auto sm:mx-0"
+                  href="https://cloud.wenwen-ai.com/pricing"
+                >
                   查看模型定价
                 </Button>
               </div>
