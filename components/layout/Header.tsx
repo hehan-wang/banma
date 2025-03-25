@@ -47,12 +47,7 @@ export default function Header() {
                 priority
               />
             </div>
-            <span className={cn(
-              "ml-1 text-xl font-semibold tracking-tight",
-              isScrolled 
-                ? "text-primary-700 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent" 
-                : "text-white drop-shadow-sm"
-            )}>
+            <span className="ml-1 text-xl font-semibold tracking-tight text-primary-600">
               斑码云
             </span>
           </Link>
@@ -63,10 +58,7 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={cn(
-                  'font-medium transition-colors duration-200',
-                  isScrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-primary-200'
-                )}
+                className="font-medium transition-colors duration-200 text-primary-600 hover:text-primary-700"
               >
                 {link.name}
               </Link>
