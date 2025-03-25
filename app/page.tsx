@@ -251,7 +251,7 @@ export default function Home() {
                 "标准技术支持"
               ]}
               cta="立即购买"
-              ctaLink="/pricing/dedicated"
+              ctaLink="/contact"
               popular={false}
             />
             <PricingCard
