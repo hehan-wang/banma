@@ -47,18 +47,18 @@ export default function Header() {
                 priority
               />
             </div>
-            <span className="ml-1 text-xl font-semibold tracking-tight text-primary-600">
+            <span className="ml-1 text-xl font-bold tracking-tight bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
               斑码云
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="font-medium transition-colors duration-200 text-primary-600 hover:text-primary-700"
+                className="font-medium text-gray-600 hover:text-primary-600 transition-all duration-300 hover:scale-105 tracking-wide"
               >
                 {link.name}
               </Link>
@@ -124,7 +124,7 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-gray-700 hover:text-primary-600 font-medium"
+                  className="text-gray-600 hover:text-primary-600 font-medium transition-colors duration-300 tracking-wide"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
