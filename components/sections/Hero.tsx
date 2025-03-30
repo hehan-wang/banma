@@ -14,18 +14,18 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-[70vh] flex items-center">
+    <section className="relative min-h-[50vh] flex items-center">
       {/* 背景图片 */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-bg.png"
           alt="Background"
           fill
-          className="object-cover"
+          className="object-cover object-[center_40%]"
           priority
         />
         {/* 深色叠加层 */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-indigo-900/70 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 to-indigo-900/60 mix-blend-multiply" />
       </div>
 
       {/* Particles effect */}
@@ -96,8 +96,8 @@ export default function Hero() {
 
       {/* 装饰元素 - 渐变光晕 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-[2]">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-300 rounded-full opacity-30 blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-300 rounded-full opacity-30 blur-3xl animate-pulse" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-300 rounded-full opacity-20 blur-3xl animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-300 rounded-full opacity-20 blur-3xl animate-pulse" />
       </div>
 
       <div className="relative z-[3] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
