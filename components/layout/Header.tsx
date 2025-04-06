@@ -47,39 +47,48 @@ const menuItems = {
   ],
   products: [
     {
-      id: 'product-1',
-      title: '问问AI',
-      description: '支持 ChatGPT、Midjourney、Dall-e-3 等主流模型，解决网络问题，直接稳定访问',
-      image: '/images/products/wenwen-ai.png',
+      id: 'product-4',
+      title: '斑码云算力平台',
+      description: '高性价比的接入DeepSeek（支持saas，iaas，paas）',
+      image: '/images/products/cloud.png',
       icon: '/icons/wenwen.svg',
-      url: 'https://chat.wenwen-ai.com/',
-      tag: '立即体验'
-    },
-    {
-      id: 'product-2',
-      title: '问问Agent', 
-      description: '基于大模型+RAG+画布编排，快速构建和部署AI应用，可视化配置界面',
-      image: '/images/products/wenwen-agent.png',
-      icon: '/icons/wenwen.svg',
-      url: 'https://app.wenwen-ai.com/',
+      url: 'https://cloud.wenwen-ai.com/',
       tag: '新品上线'
     },
     {
+      id: 'product-1',
+      title: '问问Agent平台',
+      description: '企业一站式AI完整解决方案，整合了Agent、工作流设计、知识库、开发、使用、管理以及知识沉淀等多种功能',
+      image: '/images/products/wenwen-ai.png',
+      icon: '/icons/wenwen.svg',
+      url: 'https:/app.wenwen-ai.com/',
+      tag: '企业级'
+    },
+    {
+      id: 'product-2',
+      title: '问问Chat平台',
+      description: '让所有人都能快速的使用上市面上所有的智能体和大模型',
+      image: '/images/products/wenwen-chat.png',
+      icon: '/icons/wenwen.svg',
+      url: 'https://gpt.wenwen-ai.com/chat',
+      tag: '立即体验'
+    },
+    {
       id: 'product-3',
-      title: '问问API',
-      description: '多模型API集成',
+      title: '问问API平台',
+      description: '高性能，调用市面上所有的开源/闭源模型',
       image: '/images/products/wenwen-api.png',
       icon: '/icons/wenwen.svg',
       url: 'https://key.wenwen-ai.com/',
       tag: '开放接入'
     },
     {
-      id: 'product-4',
-      title: '问问Bot',
-      description: '微信智能问答机器人',
-      image: '/images/products/wenwen-bot.png',
+      id: 'product-6',
+      title: '斑码灵犀小智',
+      description: '让智能体接管你的个人微信',
+      image: '/images/products/lingxi.png',
       icon: '/icons/wenwen.svg',
-      url: 'https://ei3yj6pays9.feishu.cn/wiki/FJC1wT4QUiPc8Tkth5icrNy8nNe',
+      url: 'https://pan.baidu.com/s/1kSdLyUaCqc6DUy-31mU1Kg?pwd=7b8e',
       tag: '新品上线'
     }
   ],
